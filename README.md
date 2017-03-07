@@ -39,7 +39,7 @@ And testing functionality for the YubiKey:
 ## Usage
 PassMan simply stores your account passwords and other information in an encrypted database file.  This is kept on your storage and is never transmitted elsewhere.  If you wish to access your database across many devices, consider keeping the *.pmdb* database file on a cloud file service like Dropbox.
 
-To start, simply create a new database and begin adding your account entries.  When saving the database, you'll be prompted for a master password.  Make this strong - it's the only password you'll now need to remember!  Your YubiKey will then be challenged to obtain its response as the second encryption factor.  See this [video]() for a demonstration of usage.
+To start, simply create a new database and begin adding your account entries.  When saving the database, you'll be prompted for a master password.  Make this strong - it's the only password you'll now need to remember!  Your YubiKey will then be challenged to obtain its response as the second encryption factor.  See this [video](https://www.youtube.com/watch?v=BNIZxAZJLts) for a demonstration of usage.
 
 ## Installation
 While PassMan is designed in Qt, in its current form it is only functional on Linux.  This is due to the implementation of YubiKey detection and Yubico software used to query it.
