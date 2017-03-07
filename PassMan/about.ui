@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>About</class>
+ <widget class="QWidget" name="About">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>330</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>About PassMan</string>
+  </property>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>20</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>PassMan</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="authorLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>80</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>© Adam Coffee</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="linkLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>140</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>adamcoffee.net</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usingTitleLabel">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>20</y>
+     <width>67</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Using:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usingLabel1">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>50</y>
+     <width>221</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- yubikey-personalization 1.18.0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usingLabel2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>80</y>
+     <width>221</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- crypto++ 5.6.5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usingLabel3">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>110</y>
+     <width>221</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- Qt 5.8.0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel1">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>180</y>
+     <width>411</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
+   <property name="text">
+    <string>A two-factor encrypted password manager supporting:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>210</y>
+     <width>411</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- YubiKey HMAC-SHA1 challenge-response as second factor</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>411</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- AES-256 full-database encryption in GCM-AE mode</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>411</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- PBKDF2-SHA512 salted two-factor master key generation</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel5">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>270</y>
+     <width>411</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- Auto-type functionality for interaction with login forms</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="descriptionLabel6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>411</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- Customizable password generator and strength calculator</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usingLabel4">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>140</y>
+     <width>221</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>- xdotool 3.20150503.1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="iconLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>150</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="passmanresources.qrc">:/PassMan.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>254</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View BSD License</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="passmanresources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
