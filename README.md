@@ -41,7 +41,7 @@ The following are required to compile and run PassMan:
 3. [Qt](http://doc.qt.io/qt-5/)
 4. [xdotool](http://www.semicomplete.com/projects/xdotool)
 
-To install, download the latest of [installer](/install/) files.  Untar the file, then enable execution of install_passman.sh and run it.  You may be prompted to install the aforementioned dependencies.
+To install, download the latest of [installer](/install/) files.  Untar the file, then enable execution of the included shell script and run it.  You may be prompted to install the aforementioned dependencies.
 
 ## License
 Licensed under the three-clause BSD license, found in the [LICENSE](/PassMan/LICENSE) file.
