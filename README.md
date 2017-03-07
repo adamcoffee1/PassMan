@@ -37,6 +37,11 @@ And testing functionality for the YubiKey:
 ![YubiKey](/screenshots/YubiKey.png)
 
 ## Usage
+PassMan simply stores your account passwords and other information in an encrypted database file.  This is kept on your storage and is never transmitted elsewhere.  If you wish to access your database across many devices, consider keeping the *.pmdb* database file on a cloud file service like Dropbox.
+
+To start, simply create a new database and begin adding your account entries.  When saving the database, you'll be prompted for a master password.  Make this strong - it's the only password you'll now need to remember!  Your YubiKey will then be challenged to obtain its response as the second encryption factor.  See this [video]() for a demonstration of usage.
+
+## Installation
 While PassMan is designed in Qt, in its current form it is only functional on Linux.  This is due to the implementation of YubiKey detection and Yubico software used to query it.
 
 The following are required to compile and run PassMan:
@@ -46,7 +51,7 @@ The following are required to compile and run PassMan:
 3. [Qt](http://doc.qt.io/qt-5/)
 4. [xdotool](http://www.semicomplete.com/projects/xdotool)
 
-To install, download the latest of [installer](/install/) files.  Untar the file, then enable execution of the included shell script and run it.  You may be prompted to install the aforementioned dependencies.
+To install, download the latest of [installer](/install/) files.  Untar the file, then enable execution of the included shell script and run it.  You may be prompted to install the aforementioned dependencies.  See this [video](https://www.youtube.com/watch?v=nsx8m-WDR2M) for a demonstration of installation.
 
 ## License
 Licensed under the three-clause BSD license, found in the [LICENSE](/PassMan/LICENSE) file.
