@@ -16,6 +16,11 @@ PassMan utilizes the [Crypto++](https://www.cryptopp.com/) library for secure op
 
 Specifically, the master password is concatenated with the YubiKey's 20-byte [HMAC-SHA1](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) response to a random 64-byte challenge.  A 32-byte key is then derived via PBKDF2 with SHA512 and a 16-byte random salt.  AES-256 is used with a random 256-byte initialization vector in GCM-AE mode to provide authenticated encryption of the entire file.  All sensitive variables are wiped from memory prior to exiting the application, or after closing a database.
 
+## YubiKey Configuration
+You must have a YubiKey with one configuration slot set to HMAC-SHA1.  This can be done through Yubico's YubiKey Personalization Tool, available as the package *yubikey-personalization-gui*.  Here's an example of the correct tab - be sure to generate a unique Secret Key:
+
+![Personalization](/screenshots/YubiKey Personalization.png)
+
 ## Screenshots
 The main window, where account entries can be edited and auto-typed:
 
