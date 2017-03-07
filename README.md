@@ -31,5 +31,17 @@ And testing functionality for the YubiKey:
 
 ![YubiKey](/screenshots/YubiKey.png)
 
+## Usage
+While PassMan is designed in Qt, in its current form it is only functional on Linux.  This is due to the implementation of YubiKey detection and Yubico software used to query it.
+
+The following are required to compile and run PassMan:
+
+1. [yubikey-personalization](https://developers.yubico.com/yubikey-personalization/)
+2. [crypto++](https://www.cryptopp.com)
+3. [Qt](http://doc.qt.io/qt-5/)
+4. [xdotool](http://www.semicomplete.com/projects/xdotool)
+
+To install, download the latest of [installer](/install/) files.  Untar the file, then enable execution of install_passman.sh and run it.  You may be prompted to install the aforementioned dependencies.
+
 ## License
 Licensed under the three-clause BSD license, found in the [LICENSE](/PassMan/LICENSE) file.
