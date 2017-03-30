@@ -19,12 +19,12 @@ Specifically, the master password is concatenated with the YubiKey's 20-byte [HM
 ## YubiKey Configuration
 You must have a YubiKey with one configuration slot set to HMAC-SHA1.  This can be done through Yubico's YubiKey Personalization Tool, available as the package *yubikey-personalization-gui*.  Here's an example of the correct tab - be sure to generate a unique Secret Key:
 
-![Personalization](/screenshots/YubiKey Personalization.png)
+![Personalization](/screenshots/YubiKeyPersonalization.png)
 
 ## Screenshots
 The main window, where account entries can be edited and auto-typed:
 
-![Main Window](/screenshots/Main Window.png)
+![Main Window](/screenshots/MainWindow.png)
 
 
 The customizable password generator:
