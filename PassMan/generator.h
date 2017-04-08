@@ -15,6 +15,7 @@
 #include <QtGlobal> // For random function
 #include "math.h"
 #include "strengthcalculator.h"
+#include <crypto++/osrng.h>
 #include <QDebug> // TESTING
 
 namespace Ui {

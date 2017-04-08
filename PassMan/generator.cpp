@@ -20,7 +20,9 @@ Generator::Generator(QWidget *parent) : QWidget(parent), ui(new Ui::Generator)
     ui->strengthProgressBar->setMinimum(0);
     ui->strengthProgressBar->setMaximum(StrengthCalculator::NAIVE_HIGH_STRENGTH_ENTROPY);
     useLower = useUpper = useNumeral = useOther = true;
-    length = 0;
+    length = 8;
+    ui->lengthSpinBox->setValue(length);
+    ui->lengthSLider->setValue(length);
 }
 
 Generator::~Generator()
@@ -58,7 +60,7 @@ void Generator::on_passwordLineEdit_textChanged(const QString &arg1)
     int strength = StrengthCalculator::naiveEntropyBits(ui->passwordLineEdit->text());
     if (ui->strengthProgressBar->maximum() < strength) ui->strengthProgressBar->setMaximum(strength);
     ui->strengthProgressBar->setValue(strength);
-    if (arg1.length() < 1)
+    if (arg1.length() < 8)
     {
         ui->copyButton->setEnabled(false);
         ui->acceptButton->setEnabled(false);
@@ -81,30 +83,45 @@ void Generator::on_generateButton_clicked() { generate(); } // Trigger new gener
 void Generator::generate()  // Formulate a new password, given set constraints
 {
     QString pass;
-    qsrand(QTime::currentTime().msecsSinceStartOfDay());    // Seed the pseudo-random generator
+    CryptoPP::AutoSeededRandomPool prng;    // Initialize CSPRNG
     QList<int> selectedTypes;
+    bool containsAllTypes, containsLower, containsUpper, containsNumeral, containsOther;
+    containsAllTypes = false;
     if (useLower) selectedTypes.append(0);
     if (useUpper) selectedTypes.append(1);
     if (useNumeral) selectedTypes.append(2);
     if (useOther) selectedTypes.append(3);
     if (selectedTypes.length() < 1) return;
-    for (int i = 0; i < length; i++)
+    while (!containsAllTypes)
     {
-        switch (selectedTypes.at(qrand() % selectedTypes.length()))
-        {
-            case 0:
-                pass.append(LOWER.at(qrand() % StrengthCalculator::NUM_LOWER));
-                break;
-            case 1:
-                pass.append(UPPER.at(qrand() % StrengthCalculator::NUM_UPPER));
-                break;
-            case 2:
-                pass.append(NUMERAL.at(qrand() % StrengthCalculator::NUM_NUMERAL));
-                break;
-            case 3:
-                pass.append(OTHER.at(qrand() % StrengthCalculator::NUM_OTHER));
-                break;
+        pass.clear();
+        containsAllTypes = containsLower = containsUpper = containsNumeral = containsOther = false;
+        for (int i = 0; i < length; i++)
+        {   // Select a random type, then a random value within that type
+            switch (selectedTypes.at(prng.GenerateByte() % selectedTypes.length()))
+            {
+                case 0:
+                    pass.append(LOWER.at(prng.GenerateByte() % StrengthCalculator::NUM_LOWER));
+                    break;
+                case 1:
+                    pass.append(UPPER.at(prng.GenerateByte() % StrengthCalculator::NUM_UPPER));
+                    break;
+                case 2:
+                    pass.append(NUMERAL.at(prng.GenerateByte() % StrengthCalculator::NUM_NUMERAL));
+                    break;
+                case 3:
+                    pass.append(OTHER.at(prng.GenerateByte() % StrengthCalculator::NUM_OTHER));
+                    break;
+            }
         }
+        for (int i = 0; i < length; i++)    // Ensure all chosen types are somewhere in the password
+        {
+            if (LOWER.contains(pass.at(i))) containsLower = true;
+            if (UPPER.contains(pass.at(i))) containsUpper = true;
+            if (NUMERAL.contains(pass.at(i))) containsNumeral = true;
+            if (OTHER.contains(pass.at(i))) containsOther = true;
+        }
+        containsAllTypes = (containsLower == useLower) && (containsUpper == useUpper) && (containsNumeral == useNumeral) && (containsOther == useOther);
     }
     ui->passwordLineEdit->setText(pass);
 }
