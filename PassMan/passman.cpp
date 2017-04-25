@@ -278,7 +278,7 @@ void PassMan::updatePasswords()    // Handle parity between password textboxes o
     }
     else if (!passMismatch) // Mismatch!
     {
-        ui->passwordLineEdit->setStyleSheet(LINEEDIT_YELLOW_BG);
+        ui->repeatedPasswordLineEdit->setStyleSheet(LINEEDIT_YELLOW_BG);
         passMismatch = true;
     }
 }
